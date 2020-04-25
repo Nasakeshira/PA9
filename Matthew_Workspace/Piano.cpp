@@ -9,6 +9,14 @@ SoundBuffer Piano::loadSound()
 	
 	buffer.loadFromSamples(&samples[0], samples.size(), 2, 44100);
 	
+	
+
+	return buffer;
+}
+
+void playSound()
+{
+
 	while(window.isOpen())
 	{
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
@@ -40,6 +48,4 @@ SoundBuffer Piano::loadSound()
 			sound.play()
 		}
 	}		
-
-	return buffer;
 }
