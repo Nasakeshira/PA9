@@ -1,7 +1,12 @@
+Students:
+John Lancaster LAB2, TA Yongmin Joh
+Michael Sallee LAB2, TA Yongmin Joh
+Matthew Yien LAB10, TA Cody Mercadante
+
 Virtual Piano
 Tie white keys to keyboard A S D F G H J K L : "
 
-Black Keys to QW ERT TY UIO P{ 
+Black Keys to QW ERT YU IOP {} 
 
 Piano assets need 2 for each key, 1 for pressed, 1 for neutral
 
@@ -10,7 +15,6 @@ https://www.sfml-dev.org/tutorials/2.5/audio-sounds.php
 https://www.youtube.com/watch?v=1j6OTtfvccQ
 
 Format
-VirtualPiano.h
+Piano.h
 Source.cpp
-
-Not sure if we need anything else than a 2 file format.
+FunPiano.h (Inheritance Polymorphism)
