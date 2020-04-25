@@ -6,14 +6,13 @@
 #include <SFML/Graphics.hpp>
 
 // Creating game loop
-// Handle player input, updating gamestate (I.E. button has been pressed play sound), render (load piano
+// Handle player input, updating gamestate (I.E. button has been pressed play sound), render (load piano)
 class Game
 {
 public:
     Game();
 
     void run();
-
 
     template<typename T, typename... Args>
     void pushState(Args&&... args);
