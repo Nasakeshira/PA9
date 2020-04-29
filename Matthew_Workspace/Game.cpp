@@ -28,7 +28,7 @@ void Game::tryPop()
 }
 
 // Get sound to play!
-void Game::handleInput(SoundBuffer buffer[], Sound sound[])
+void Game::handleInput(sf::SoundBuffer buffer[], sf::Sound sound[])
 {
 	Sound A,B,C,D,E,F,G,CsDb,DsEb,FsGb,GsAb,AsBb;
 
