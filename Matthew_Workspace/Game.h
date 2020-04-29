@@ -3,11 +3,12 @@
 
 #include <memory>
 #include <vector>
-#include <SFML/Graphics.hpp>
+#include "Piano.h"
 
 // Creating game loop
 // Handle player input, updating gamestate (I.E. button has been pressed play sound), render (load piano)
 class Game
+    :public Piano
 {
 public:
     Game();
@@ -26,16 +27,16 @@ private:
 
     void handleEvents();
 
+    void handleInput(SoundBuffer buffer[], Sound sound[]);
+
     bool m_shouldPop = false;
 
 };
 
-template<typename T, typename... Args>
-void Game::pushState()
-{
-
-}
-
-
+//template<typename T, typename... Args>
+//void Game::pushState()
+//{
+//
+//}
 
 #endif

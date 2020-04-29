@@ -4,20 +4,19 @@ using namespace sf;
 
 SoundBuffer Piano::loadSound()
 {
-	std::vector<sf::Int16> samples = ...;
 	SoundBuffer buffer;
 	
-	buffer.loadFromSamples(&samples[0], samples.size(), 2, 44100);
+	// buffer.loadFromSamples(&samples[0], samples.size(), 2, 44100);
 	
-	
+	buffer.loadFromFile("../PA9/Matthew_Workspace/Sound.wav");
 
 	return buffer;
 }
 
-void playSound()
+/* void playSound()
 {
 
-	while(window.isOpen())
+	while(m_window.isOpen())
 	{
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
@@ -47,5 +46,4 @@ void playSound()
 		{
 			sound.play()
 		}
-	}		
-}
+	}*/

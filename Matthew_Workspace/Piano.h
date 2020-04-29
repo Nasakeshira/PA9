@@ -15,7 +15,7 @@ public:
 // Tentative structure for programs
 void playSound();
 
-void loadSound();
+sf::SoundBuffer loadSound();
 
 void displayKeys();
 
