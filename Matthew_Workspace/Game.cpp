@@ -9,6 +9,64 @@ Game::Game()
 
 	Sprite sprite1(t1);
 	Sprite sprite2(t2);
+	
+	////White Keys
+Sprite.setColor(sf::Color::White);
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+
+//Black Keys
+Sprite.setColor(sf::Color::Black);
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
+shape.setOutlineThickness(3.f);
+shape.setOutlineColor(sf::Color(255,255,255))
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
+shape.setOutlineThickness(3.f);
+shape.setOutlineColor(sf::Color(255,255,255))
+
+//White Keys
+Sprite.setColor(sf::Color::White);
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+
+//Black Keys
+Sprite.setColor(sf::Color::Black);
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
+shape.setOutlineThickness(3.f);
+shape.setOutlineColor(sf::Color(255,255,255))
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
+shape.setOutlineThickness(3.f);
+shape.setOutlineColor(sf::Color(255,255,255))
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
+shape.setOutlineThickness(3.f);
+shape.setOutlineColor(sf::Color(255,255,255))
+
+//White Keys
+Sprite.setColor(sf::Color::White);
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+
+//Black Keys
+Sprite.setColor(sf::Color::Black);
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
+shape.setOutlineThickness(3.f);
+shape.setOutlineColor(sf::Color(255,255,255))
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
+shape.setOutlineThickness(3.f);
+shape.setOutlineColor(sf::Color(255,255,255))
+
+////White Keys
+Sprite.setColor(sf::Color::White);
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+
+
+//(255,255,255) - This is the white rbg code
+//Black rbg code is (0, 0, 0)
 
 	loadSound();
 }
