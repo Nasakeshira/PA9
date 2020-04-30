@@ -9,65 +9,48 @@ Game::Game()
 
 	Sprite sprite1(t1);
 	Sprite sprite2(t2);
-	
-	////White Keys
-Sprite.setColor(sf::Color::White);
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
 
-//Black Keys
-Sprite.setColor(sf::Color::Black);
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
-shape.setOutlineThickness(3.f);
-shape.setOutlineColor(sf::Color(255,255,255))
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
-shape.setOutlineThickness(3.f);
-shape.setOutlineColor(sf::Color(255,255,255))
+	sf::RectangleShape rectangle(sf::Vector2f(20.f, 40.f));
+rectangle.setSize(20.f, 40.f);
+rectangle.setFillColor(255, 255, 255);
 
-//White Keys
-Sprite.setColor(sf::Color::White);
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
+sf::RectangleShape rectangle2(sf::Vector2f(20.f, 30.f));
+rectangle2.setFillColor(0, 0, 0);
+rectangle2.setOutlineThickness(3.f);
+rectangle2.setOutlineColor(sf::Color(255,255,255))
+rectangle2.setSize(15.f, 30.f);
 
-//Black Keys
-Sprite.setColor(sf::Color::Black);
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
-shape.setOutlineThickness(3.f);
-shape.setOutlineColor(sf::Color(255,255,255))
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
-shape.setOutlineThickness(3.f);
-shape.setOutlineColor(sf::Color(255,255,255))
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
-shape.setOutlineThickness(3.f);
-shape.setOutlineColor(sf::Color(255,255,255))
 
-//White Keys
-Sprite.setColor(sf::Color::White);
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
-
-//Black Keys
-Sprite.setColor(sf::Color::Black);
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
-shape.setOutlineThickness(3.f);
-shape.setOutlineColor(sf::Color(255,255,255))
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 10.f));
-shape.setOutlineThickness(3.f);
-shape.setOutlineColor(sf::Color(255,255,255))
-
-////White Keys
-Sprite.setColor(sf::Color::White);
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
-sf::RectangleShape rectangle(sf::Vector2f(10.f, 18.f));
-
+window.draw(rectangle);
+window.draw(rectangle);
+window.draw(rectangle);
+//
+window.draw(rectangle2);
+window.draw(rectangle2);
+//
+window.draw(rectangle);
+window.draw(rectangle);
+window.draw(rectangle);
+//
+window.draw(rectangle2);
+window.draw(rectangle2);
+window.draw(rectangle2);
+//
+window.draw(rectangle);
+window.draw(rectangle);
+window.draw(rectangle);
+//
+window.draw(rectangle2);
+window.draw(rectangle2);
+//
+window.draw(rectangle);
+window.draw(rectangle);
+window.draw(rectangle);
 
 //(255,255,255) - This is the white rbg code
 //Black rbg code is (0, 0, 0)
 
+	
 	loadSound();
 }
 
