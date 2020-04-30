@@ -26,7 +26,7 @@ public:
     void popState();
 
 private:
-    sf::RenderWindow m_window;
+   sf::RenderWindow m_window;
 
    sf::Texture t1;
    sf::Texture t2;
@@ -49,9 +49,6 @@ private:
 
     bool m_shouldPop = false;
 
-    sf::SoundBuffer buffer[7];
-
-    sf::Sound sound[7];
 };
 
 //template<typename T, typename... Args>

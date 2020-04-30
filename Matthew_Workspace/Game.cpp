@@ -9,31 +9,16 @@ Game::Game()
 
 	Sprite sprite1(t1);
 	Sprite sprite2(t2);
+
+	loadSound();
 }
 
 // Infinite loop that exits only when window is closed.
 void Game::run()
 {
-	SoundBuffer *hold = nullptr;
 	// srand(time(0));
-	// Load sound files
-	*hold = Piano::loadSound();
-
-	Sound sound[7];
-	
-	for (int index = 0; index < 7; index++)
-	{
-		sound[index].setBuffer(hold[index]);
-	}
 
 	// Load textures
-	
-	t1.loadFromFile("images/white.png");
-	t2.loadFromFile("images/black.png");
-
-	Sprite sprite1(t1);
-	Sprite sprite2(t2);
-
 
 	while (m_window.isOpen())
     {
@@ -60,7 +45,6 @@ void Game::run()
         m_window.display();
         handleEvents();
     }
-    
 }
 
 //void Game::tryPop()
@@ -71,67 +55,71 @@ void Game::run()
 // Get sound to play!
 void Game::handleInput()
 {
-	Sound A, B, C, D, E, F, G;
+	//Sound A, B, C, D, E, F, G;
 	// Too be added later in update CsDb, DsEb, FsGb, GsAb, AsBb;
-
-	A = sound[0];
-	B = sound[1];
-	C = sound[2];
-	D = sound[3];
-	E = sound[4];
-	F = sound[5];
-	G = sound[6];
 
 
 	// White Keys
 	if (Keyboard::isKeyPressed(Keyboard::A))
 	{
-		C.play();
+		// C
+		sound[2].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::S))
 	{
-		D.play();
+		// D
+		sound[3].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::D))
 	{
-		E.play();
+		// E
+		sound[4].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::F))
 	{
-		F.play();
+		// F
+		sound[5].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::G))
 	{
-		G.play();
+		// G
+		sound[6].play();
 	}
 	// Different octave
 	if (Keyboard::isKeyPressed(Keyboard::H))
 	{
-		A.play();
+		// A
+		sound[0].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::J))
 	{
-		B.play();
+		// B
+		sound[1].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::K))
 	{
-		C.play();
+		// C
+		sound[2].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::L))
 	{
-		D.play();
+		// D
+		sound[3].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::SemiColon))
 	{
-		E.play();
+		// E
+		sound[4].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Quote))
 	{
-		F.play();
+		// F
+		sound[5].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Enter))
 	{
-		G.play();
+		// G
+		sound[6].play();
 	}
 
 	// Black Keys

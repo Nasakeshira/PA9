@@ -12,7 +12,9 @@ private:
 public:
 // Tentative structure for programs
 
-sf::SoundBuffer loadSound();
+	sf::Sound sound[7];
+
+	void loadSound();
 
 // Maybe include a thing where people can play a piano together? Using <SFML/Network.hpp>
 
