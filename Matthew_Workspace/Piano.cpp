@@ -7,6 +7,8 @@ SoundBuffer Piano::loadSound()
 	SoundBuffer buffer[7];
 	
 	// buffer.loadFromSamples(&samples[0], samples.size(), 2, 44100);
+
+	// loadFromfile need to sample all the correct audio files
 	
 	//A
 	buffer[0].loadFromFile("../PA9/Matthew_Workspace/Sound.wav");
