@@ -14,7 +14,7 @@ Game::Game()
 // Infinite loop that exits only when window is closed.
 void Game::run()
 {
-	SoundBuffer *hold;
+	SoundBuffer *hold = nullptr;
 	// srand(time(0));
 	// Load sound files
 	*hold = Piano::loadSound();

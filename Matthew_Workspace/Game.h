@@ -40,7 +40,6 @@ private:
     int blackKeys = 7;
     int W = size * whiteKeys;
     int B = size * blackKeys;
-    int size = 16;
     
     // void tryPop();
 

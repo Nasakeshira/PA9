@@ -22,15 +22,13 @@ using namespace sf;
 
 int main()
 {
-	//char note;
-
 	Game game;
 
     // Already called in the construction of game
 	//RenderWindow window(VideoMode(1280,720), "Piano Play's");
 
 
-    game.run;
+    game.run();
     /*
 	while(window.isOpen())
 	{

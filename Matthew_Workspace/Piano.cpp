@@ -13,15 +13,15 @@ SoundBuffer Piano::loadSound()
 	//B
 	buffer[1].loadFromFile("../PA9/Matthew_Workspace/Sound.wav");
 	//C
-	buffer[2].loadFromFile();
+	buffer[2].loadFromFile("../PA9/Matthew_Workspace/Sound.wav");
 	//D
-	buffer[3].loadFromFile();
+	buffer[3].loadFromFile("../PA9/Matthew_Workspace/Sound.wav");
 	//E
-	buffer[4].loadFromFile();
+	buffer[4].loadFromFile("../PA9/Matthew_Workspace/Sound.wav");
 	//F
-	buffer[5].loadFromFile();
+	buffer[5].loadFromFile("../PA9/Matthew_Workspace/Sound.wav");
 	//G
-	buffer[6].loadFromFile();
+	buffer[6].loadFromFile("../PA9/Matthew_Workspace/Sound.wav");
 
 	return *buffer;
 }
