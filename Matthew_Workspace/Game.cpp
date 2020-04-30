@@ -2,7 +2,7 @@
 using namespace sf;
 
 Game::Game()
-: m_window (VideoMode(1280,720), "Piano")
+: m_window (VideoMode(1280,720), "Paper Piano")
 {
 	t1.loadFromFile("images/white.png");
 	t2.loadFromFile("images/black.png");

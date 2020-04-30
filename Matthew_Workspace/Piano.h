@@ -11,6 +11,9 @@ private:
 
 public:
 // Tentative structure for programs
+	Piano();
+
+	~Piano();
 
 	sf::Sound sound[7];
 
