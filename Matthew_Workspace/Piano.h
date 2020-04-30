@@ -2,10 +2,8 @@
 #define PIANO_H
 // May not need <iostream>
 #include <iostream>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
-#include <SFML/Graphics.hpp>
+
 
 class Piano
 {
@@ -13,18 +11,14 @@ private:
 
 public:
 // Tentative structure for programs
-void playSound();
 
 sf::SoundBuffer loadSound();
 
-void displayKeys();
-
 // Maybe include a thing where people can play a piano together? Using <SFML/Network.hpp>
-void displayMenu();
 
-void downShiftOctave();
+// void downShiftOctave(); if isKeyPressed right shift
 
-void upShiftOctave();
+// void upShiftOctave(); if isKeyPressed left shift
 
 };
 

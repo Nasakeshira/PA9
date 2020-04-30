@@ -4,13 +4,26 @@ using namespace sf;
 
 SoundBuffer Piano::loadSound()
 {
-	SoundBuffer buffer;
+	SoundBuffer buffer[7];
 	
 	// buffer.loadFromSamples(&samples[0], samples.size(), 2, 44100);
 	
-	buffer.loadFromFile("../PA9/Matthew_Workspace/Sound.wav");
+	//A
+	buffer[0].loadFromFile("../PA9/Matthew_Workspace/Sound.wav");
+	//B
+	buffer[1].loadFromFile("../PA9/Matthew_Workspace/Sound.wav");
+	//C
+	buffer[2].loadFromFile();
+	//D
+	buffer[3].loadFromFile();
+	//E
+	buffer[4].loadFromFile();
+	//F
+	buffer[5].loadFromFile();
+	//G
+	buffer[6].loadFromFile();
 
-	return buffer;
+	return *buffer;
 }
 
 /* void playSound()

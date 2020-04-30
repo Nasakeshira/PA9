@@ -17,34 +17,21 @@ int main()
 
 //Our PA9 Main Code
 #include "Game.h"
-#include <iostream>
-#include <SFML/Graphics.hpp>
-#include <time.h>
 
 using namespace sf;
 
 int main()
 {
-	srand(time(0));
-
-	int whiteKeys = 12;
-	int blackKeys = 7;
-	int W = size * whiteKeys;
-	int B = size * blackKeys;
-	int size = 16;
 	//char note;
 
 	Game game;
 
-	RenderWindow window(VideoMode(w, h), "Piano Play's");
+    // Already called in the construction of game
+	//RenderWindow window(VideoMode(1280,720), "Piano Play's");
 
-	Texture t1, t2;
-	t1.loadFromFile("images/white.png");
-	t2.loadFromFile("images/balck.png");
 
-	Sprite sprite1(t1);
-	Sprite sprite2(t2);
-
+    game.run;
+    /*
 	while(window.isOpen())
 	{
 		//Event play;
@@ -53,7 +40,7 @@ int main()
 		game.run();
 
 		//Only have this becuase it is not in run(). If its put into run() then take this part out
-		game.handleInput();
+		//game.handleInput();
 
 
 	//	while(window.pollEvent(play))
@@ -71,29 +58,13 @@ int main()
 		window.clear();
 
 		//Setting the postion on where you are starting on the keyboard(It doesn't matter becuase you can hit any key to play the piano)
-		for(int i = 0; i < whiteKeys; i++)
-		{
-			for(int j = 0; j < blackKeys; j++)
-			{
-				sprite1.setPosition(i*size, j*size)
-				window.draw(sprite1);
-			}
-		}
 
-		for(int i = 0; i < whiteKeys; i++)
-		{
-			for(int j = 0; j < blackKeys; j++)
-			{
-				sprite2.setPosition(i*size, j*size)
-				window.draw(sprite2);
-			}
-		}
 
 
 		window.display();
 
 	}
-
+    */
 
 	return 0;
 }

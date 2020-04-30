@@ -3,6 +3,11 @@
 
 #include <memory>
 #include <vector>
+#include <time.h>
+#include <SFML/Network.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 #include "Piano.h"
 
 // Creating game loop
@@ -15,22 +20,39 @@ public:
 
     void run();
 
-    template<typename T, typename... Args>
-    void pushState(Args&&... args);
+    //template<typename T, typename... Args>
+    //void pushState(Args&&... args);
 
     void popState();
 
 private:
     sf::RenderWindow m_window;
 
-    void tryPop();
+   sf::Texture t1;
+   sf::Texture t2;
+
+   sf::Sprite sprite1;
+   sf::Sprite sprite2;
+
+    // Private members
+    int size = 16;
+    int whiteKeys = 12;
+    int blackKeys = 7;
+    int W = size * whiteKeys;
+    int B = size * blackKeys;
+    int size = 16;
+    
+    // void tryPop();
 
     void handleEvents();
 
-    void handleInput(SoundBuffer buffer[], Sound sound[]);
+    void handleInput();
 
     bool m_shouldPop = false;
 
+    sf::SoundBuffer buffer[7];
+
+    sf::Sound sound[7];
 };
 
 //template<typename T, typename... Args>
