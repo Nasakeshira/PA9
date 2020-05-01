@@ -2,7 +2,7 @@
 using namespace sf;
 
 Game::Game()
-: m_window (VideoMode(973,420), "Paper Piano")
+	: m_window(VideoMode(973, 420), "Paper Piano")
 {
 	/*t1.loadFromFile("images/white.png");
 	t2.loadFromFile("images/black.png");*/
@@ -13,6 +13,8 @@ Game::Game()
 
 	//(255,255,255) - This is the white rbg code
 	//Black rbg code is (0, 0, 0)
+
+	Piano piano;
 
 	piano.loadSound();
 }
@@ -37,12 +39,10 @@ void Game::run()
 	rectangle2.setOutlineColor(Color::White);
 	//rectangle2.setSize(sf::Vector2f(15.f, 30.f));
 
-
-
 	while (m_window.isOpen())
-    {
+	{
 		handleEvents();
-		
+
 		handleInput();
 
 		m_window.clear();
@@ -116,9 +116,9 @@ void Game::run()
 		m_window.draw(rectangle2);
 		//m_window.draw(rectangle2);
 
-        m_window.display();
-       
-    }
+		m_window.display();
+
+	}
 }
 
 //void Game::tryPop()
@@ -133,85 +133,76 @@ void Game::handleInput()
 	// Too be added later in update CsDb, DsEb, FsGb, GsAb, AsBb;
 
 	sf::SoundBuffer buff;
+	Piano::loadSound();
 
-	buff.loadFromFile("sound.wav");
+	//buff.loadFromFile("1g - white 1");
 
-	sf::Sound C;
+	//sf::Sound C;
 
-	C.setBuffer(buff);
-
-	//Font font;
-
-	//if (!font.loadFromFile("arial.ttf"))
-	//{
-	//	std::cout << "Couldn't load arial.ttf for font\n";
-	//}
-
-	//Text text;
-	//text.setFont(font);
-	//text.setColor(Color::Red);
-	//text.setCharacterSize(10);
+	//C.setBuffer();
 
 	// White Keys
-	if (Keyboard::isKeyPressed(Keyboard::Left))
+	if (Keyboard::isKeyPressed(Keyboard::A))
 	{
 		// C
-		C.play();
-		//text.setString("C");
+		sound[0].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::W)) //black
+	{
+		// D
+		//sound[3].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::S))
 	{
-		// D
-		sound[3].play();
+		// E
+		sound[1].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::R)) //black
+	{
+		// F
+		//sound[5].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::D))
 	{
-		// E
-		sound[4].play();
+		// G
+		sound[2].play();
 	}
+	// Different octave
 	if (Keyboard::isKeyPressed(Keyboard::F))
 	{
-		// F
+		// A
+		sound[3].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Y)) //black
+	{
+		// B
+		//sound[1].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::J))
+	{
+		// C
+		sound[4].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::I)) //black
+	{
+		// D
+		//sound[3].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::K))
+	{
+		// E
 		sound[5].play();
 	}
-	if (Keyboard::isKeyPressed(Keyboard::G))
+	if (Keyboard::isKeyPressed(Keyboard::O)) //black
+	{
+		// F
+		//sound[5].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::L))
 	{
 		// G
 		sound[6].play();
 	}
-	// Different octave
-	if (Keyboard::isKeyPressed(Keyboard::H))
-	{
-		// A
-		sound[0].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::J))
-	{
-		// B
-		sound[1].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::K))
-	// To be added in v2.0
-	if (Keyboard::isKeyPressed(Keyboard::L))
-	{
-		// D
-		sound[3].play();
-	}
-	//if (Keyboard::isKeyPressed(Keyboard::SemiColon))
-	//{
-	//	// E
-	//	sound[4].play();
-	//}
-	//if (Keyboard::isKeyPressed(Keyboard::Quote))
-	//{
-	//	// F
-	//	sound[5].play();
-	//}
-	//if (Keyboard::isKeyPressed(Keyboard::Enter))
-	//{
-	//	// G
-	//	sound[6].play();
-	//}
 
 	// Black Keys
 	/*
@@ -249,22 +240,22 @@ void Game::handleInput()
 
 void Game::handleEvents()
 {
-    Event e;
-	
-    while(m_window.pollEvent(e))
-    {
-        switch (e.type)
-        {
-        case sf::Event::Closed:
-            m_window.close();
-            break;
-        default:
-            break;
-        }
-    }
+	Event e;
+
+	while (m_window.pollEvent(e))
+	{
+		switch (e.type)
+		{
+		case sf::Event::Closed:
+			m_window.close();
+			break;
+		default:
+			break;
+		}
+	}
 }
 
 void Game::popState()
 {
-    m_shouldPop = true;
+	m_shouldPop = true;
 }
