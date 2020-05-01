@@ -26,13 +26,15 @@ public:
     void popState();
 
 private:
-   sf::RenderWindow m_window;
+    sf::RenderWindow m_window;
 
-   sf::Texture t1;
-   sf::Texture t2;
+    sf::Texture t1;
+    sf::Texture t2;
 
-   sf::Sprite sprite1;
-   sf::Sprite sprite2;
+    sf::Sprite sprite1;
+    sf::Sprite sprite2;
+
+    Piano piano;
 
     // Private members
     int size = 16;

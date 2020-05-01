@@ -14,8 +14,6 @@ Game::Game()
 	//(255,255,255) - This is the white rbg code
 	//Black rbg code is (0, 0, 0)
 
-	Piano piano;
-
 	piano.loadSound();
 }
 
@@ -38,6 +36,8 @@ void Game::run()
 	rectangle2.setOutlineThickness(3.f);
 	rectangle2.setOutlineColor(Color::White);
 	//rectangle2.setSize(sf::Vector2f(15.f, 30.f));
+
+
 
 	while (m_window.isOpen())
     {
@@ -140,11 +140,24 @@ void Game::handleInput()
 
 	C.setBuffer(buff);
 
+	//Font font;
+
+	//if (!font.loadFromFile("arial.ttf"))
+	//{
+	//	std::cout << "Couldn't load arial.ttf for font\n";
+	//}
+
+	//Text text;
+	//text.setFont(font);
+	//text.setColor(Color::Red);
+	//text.setCharacterSize(10);
+
 	// White Keys
 	if (Keyboard::isKeyPressed(Keyboard::Left))
 	{
 		// C
 		C.play();
+		//text.setString("C");
 	}
 	if (Keyboard::isKeyPressed(Keyboard::S))
 	{
@@ -178,30 +191,27 @@ void Game::handleInput()
 		sound[1].play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::K))
-	{
-		// C
-		sound[2].play();
-	}
+	// To be added in v2.0
 	if (Keyboard::isKeyPressed(Keyboard::L))
 	{
 		// D
 		sound[3].play();
 	}
-	if (Keyboard::isKeyPressed(Keyboard::SemiColon))
-	{
-		// E
-		sound[4].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::Quote))
-	{
-		// F
-		sound[5].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::Enter))
-	{
-		// G
-		sound[6].play();
-	}
+	//if (Keyboard::isKeyPressed(Keyboard::SemiColon))
+	//{
+	//	// E
+	//	sound[4].play();
+	//}
+	//if (Keyboard::isKeyPressed(Keyboard::Quote))
+	//{
+	//	// F
+	//	sound[5].play();
+	//}
+	//if (Keyboard::isKeyPressed(Keyboard::Enter))
+	//{
+	//	// G
+	//	sound[6].play();
+	//}
 
 	// Black Keys
 	/*

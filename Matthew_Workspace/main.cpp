@@ -40,7 +40,6 @@ int main()
     //for (int index = 0; index < 1000000000; index++)
     //{
     //
-    //    if (Keyboard::isKeyPressed(Keyboard::A))game.sound.play();
     //    if (Keyboard::isKeyPressed(Keyboard::Left))sound.play();
     //}
     /*
