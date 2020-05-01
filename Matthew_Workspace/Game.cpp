@@ -2,56 +2,17 @@
 using namespace sf;
 
 Game::Game()
-: m_window (VideoMode(1280,720), "Paper Piano")
+: m_window (VideoMode(973,420), "Paper Piano")
 {
-	t1.loadFromFile("images/white.png");
-	t2.loadFromFile("images/black.png");
+	/*t1.loadFromFile("images/white.png");
+	t2.loadFromFile("images/black.png");*/
 
 	Sprite sprite1(t1);
 	Sprite sprite2(t2);
 
-	// White Keys
-	sf::RectangleShape rectangle(sf::Vector2f(20.f, 40.f));
-	// Redundant for now, reinstate if key sizes are wrong
-	// rectangle.setSize(Vector2f(20.f, 40.f));
-	rectangle.setFillColor(Color::White);
 
-	// Black Keys
-	sf::RectangleShape rectangle2(sf::Vector2f(15.f, 30.f));
-	rectangle2.setFillColor(Color::Black);
-	rectangle2.setOutlineThickness(3.f);
-	rectangle2.setOutlineColor(Color::White);
-	//rectangle2.setSize(sf::Vector2f(15.f, 30.f));
-
-
-	m_window.draw(rectangle);
-	m_window.draw(rectangle);
-	m_window.draw(rectangle);
-//
-	m_window.draw(rectangle2);
-	m_window.draw(rectangle2);
-//
-	m_window.draw(rectangle);
-	m_window.draw(rectangle);
-	m_window.draw(rectangle);
-//
-	m_window.draw(rectangle2);
-	m_window.draw(rectangle2);
-	m_window.draw(rectangle2);
-//
-	m_window.draw(rectangle);
-	m_window.draw(rectangle);
-	m_window.draw(rectangle);
-//
-	m_window.draw(rectangle2);
-	m_window.draw(rectangle2);
-//
-	m_window.draw(rectangle);
-	m_window.draw(rectangle);
-	m_window.draw(rectangle);
-
-//(255,255,255) - This is the white rbg code
-//Black rbg code is (0, 0, 0)
+	//(255,255,255) - This is the white rbg code
+	//Black rbg code is (0, 0, 0)
 
 	Piano piano;
 
@@ -65,6 +26,19 @@ void Game::run()
 
 	// Load textures
 
+		// White Keys
+	sf::RectangleShape rectangle(sf::Vector2f(120.f, 360.f));
+	// Redundant for now, reinstate if key sizes are wrong
+	// rectangle.setSize(Vector2f(20.f, 40.f));
+	rectangle.setFillColor(Color::White);
+
+	// Black Keys
+	sf::RectangleShape rectangle2(sf::Vector2f(90.f, 240.f));
+	rectangle2.setFillColor(Color::Black);
+	rectangle2.setOutlineThickness(3.f);
+	rectangle2.setOutlineColor(Color::White);
+	//rectangle2.setSize(sf::Vector2f(15.f, 30.f));
+
 	while (m_window.isOpen())
     {
 		handleEvents();
@@ -73,25 +47,75 @@ void Game::run()
 
 		m_window.clear();
 
-		for (int i = 0; i < whiteKeys; i++)
-		{
-			for (int j = 0; j < blackKeys; j++)
-			{
-				sprite1.setPosition(i * size, j * size);
-				m_window.draw(sprite1);
-			}
-		}
+		//for (int i = 0; i < whiteKeys; i++)
+		//{
+		//	for (int j = 0; j < blackKeys; j++)
+		//	{
+		//		sprite1.setPosition(i * size, j * size);
+		//		m_window.draw(sprite1);
+		//	}
+		//}
 
 
-		for (int i = 0; i < whiteKeys; i++)
-		{
-			for (int j = 0; j < blackKeys; j++)
-			{
-				sprite2.setPosition(i * size, j * size);
-				m_window.draw(sprite2);
-			}
-		}
+		//for (int i = 0; i < whiteKeys; i++)
+		//{
+		//	for (int j = 0; j < blackKeys; j++)
+		//	{
+		//		sprite2.setPosition(i * size, j * size);
+		//		m_window.draw(sprite2);
+		//	}
+		//}
+
 		// draw
+		// White Keys
+		rectangle.setPosition(Vector2f(0.f, 0.f));
+		m_window.draw(rectangle);
+		rectangle.setPosition(Vector2f(122.f, 0.f));
+		m_window.draw(rectangle);
+		rectangle.setPosition(Vector2f(244.f, 0.f));
+		m_window.draw(rectangle);
+		// White Keys
+		rectangle.setPosition(Vector2f(366.f, 0.f));
+		m_window.draw(rectangle);
+		rectangle.setPosition(Vector2f(488.f, 0.f));
+		m_window.draw(rectangle);
+		rectangle.setPosition(Vector2f(610.f, 0.f));
+		m_window.draw(rectangle);
+		// White Keys
+		rectangle.setPosition(Vector2f(732.f, 0.f));
+		m_window.draw(rectangle);
+		rectangle.setPosition(Vector2f(854.f, 0.f));
+		m_window.draw(rectangle);
+		// To Be Added in v2.0
+		/*
+		rectangle.setPosition(Vector2f(976.f, 0.f));
+		m_window.draw(rectangle);
+		// White Keys
+		rectangle.setPosition(Vector2f(1088.f, 0.f));
+		m_window.draw(rectangle);
+		rectangle.setPosition(Vector2f(1210.f, 0.f));
+		m_window.draw(rectangle);
+		rectangle.setPosition(Vector2f(1333.f, 0.f));
+		m_window.draw(rectangle);
+		*/
+
+		//Black Keys 1st Block
+		rectangle2.setPosition(Vector2f(77.f, 0.f));
+		m_window.draw(rectangle2);
+		rectangle2.setPosition(Vector2f(197.f, 0.f));
+		m_window.draw(rectangle2);
+		// 2nd block
+		rectangle2.setPosition(Vector2f(443.f, 0.f));
+		m_window.draw(rectangle2);
+		rectangle2.setPosition(Vector2f(565.f, 0.f));
+		m_window.draw(rectangle2);
+		rectangle2.setPosition(Vector2f(687.f, 0.f));
+		m_window.draw(rectangle2);
+		// Black Keys 3rd Block
+		rectangle2.setPosition(Vector2f(931.f, 0.f));
+		m_window.draw(rectangle2);
+		//m_window.draw(rectangle2);
+
         m_window.display();
        
     }
