@@ -15,7 +15,7 @@ int main()
 }
 */
 
-//https://www.youtube.com/watch?v=OSwutjvNjK4
+/*https://www.youtube.com/watch?v=OSwutjvNjK4*/
 //This video is about networking- refer to for referencing
 
 //Our PA9 Main Code
@@ -25,46 +25,57 @@ using namespace sf;
 
 int main()
 {
-	Game game;
-
-    // Already called in the construction of game
-	//RenderWindow window(VideoMode(1280,720), "Piano Play's");
-
+    Game game;
 
     game.run();
+
+    
+    // RenderWindow window(VideoMode(1280,720), "Test");
+    //SoundBuffer buffer;
+    //Sound sound;
+    //
+    //buffer.loadFromFile("sound.wav");
+    //sound.setBuffer(buffer);
+    //
+    //for (int index = 0; index < 1000000000; index++)
+    //{
+    //
+    //    if (Keyboard::isKeyPressed(Keyboard::A))game.sound.play();
+    //    if (Keyboard::isKeyPressed(Keyboard::Left))sound.play();
+    //}
     /*
-	while(window.isOpen())
-	{
-		//Event play;
+    while(window.isOpen())
+    {
+        //Event play;
 
-		//Running the game
-		game.run();
+        //Running the game
+        game.run();
 
-		//Only have this becuase it is not in run(). If its put into run() then take this part out
-		//game.handleInput();
-
-
-	//	while(window.pollEvent(play))
-	//	{
-	//		if(play.type == Event::Closed)
-	//			window.close();
-	//	}
-	//	if(Keyboard::isKeyPressed(Keyboard::Play))
-	//	{	
-	//		handleInput();
-	//	}
-	//	else
-	//		window.close();
-
-		window.clear();
-
-		//Setting the postion on where you are starting on the keyboard(It doesn't matter becuase you can hit any key to play the piano)
+        //Only have this becuase it is not in run(). If its put into run() then take this part out
+        //game.handleInput();
 
 
+    //	while(window.pollEvent(play))
+    //	{
+    //		if(play.type == Event::Closed)
+    //			window.close();
+    //	}
+    //	if(Keyboard::isKeyPressed(Keyboard::Play))
+    //	{
+    //		handleInput();
+    //	}
+    //	else
+    //		window.close();
 
-		window.display();
+        window.clear();
 
-	}
+        //Setting the postion on where you are starting on the keyboard(It doesn't matter becuase you can hit any key to play the piano)
+
+
+
+        window.display();
+
+    }
     */
 
 	return 0;

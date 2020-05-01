@@ -53,8 +53,9 @@ Game::Game()
 //(255,255,255) - This is the white rbg code
 //Black rbg code is (0, 0, 0)
 
-	
-	loadSound();
+	Piano piano;
+
+	piano.loadSound();
 }
 
 // Infinite loop that exits only when window is closed.
@@ -66,6 +67,10 @@ void Game::run()
 
 	while (m_window.isOpen())
     {
+		handleEvents();
+		
+		handleInput();
+
 		m_window.clear();
 
 		for (int i = 0; i < whiteKeys; i++)
@@ -77,6 +82,7 @@ void Game::run()
 			}
 		}
 
+
 		for (int i = 0; i < whiteKeys; i++)
 		{
 			for (int j = 0; j < blackKeys; j++)
@@ -85,9 +91,9 @@ void Game::run()
 				m_window.draw(sprite2);
 			}
 		}
-		handleInput();
+		// draw
         m_window.display();
-        handleEvents();
+       
     }
 }
 
@@ -102,12 +108,19 @@ void Game::handleInput()
 	//Sound A, B, C, D, E, F, G;
 	// Too be added later in update CsDb, DsEb, FsGb, GsAb, AsBb;
 
+	sf::SoundBuffer buff;
+
+	buff.loadFromFile("sound.wav");
+
+	sf::Sound C;
+
+	C.setBuffer(buff);
 
 	// White Keys
-	if (Keyboard::isKeyPressed(Keyboard::A))
+	if (Keyboard::isKeyPressed(Keyboard::Left))
 	{
 		// C
-		sound[2].play();
+		C.play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::S))
 	{
@@ -203,7 +216,7 @@ void Game::handleInput()
 void Game::handleEvents()
 {
     Event e;
-
+	
     while(m_window.pollEvent(e))
     {
         switch (e.type)
