@@ -12,11 +12,12 @@ Game::Game()
 
 	// White Keys
 	sf::RectangleShape rectangle(sf::Vector2f(20.f, 40.f));
+	// Redundant for now, reinstate if key sizes are wrong
 	// rectangle.setSize(Vector2f(20.f, 40.f));
 	rectangle.setFillColor(Color::White);
 
 	// Black Keys
-	sf::RectangleShape rectangle2(sf::Vector2f(20.f, 30.f));
+	sf::RectangleShape rectangle2(sf::Vector2f(15.f, 30.f));
 	rectangle2.setFillColor(Color::Black);
 	rectangle2.setOutlineThickness(3.f);
 	rectangle2.setOutlineColor(Color::White);
