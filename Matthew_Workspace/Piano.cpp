@@ -2,6 +2,16 @@
 
 using namespace sf;
 
+Piano::Piano()
+{
+
+}
+
+Piano::~Piano()
+{
+
+}
+
 void Piano::loadSound()
 {
 	SoundBuffer buffer[7];

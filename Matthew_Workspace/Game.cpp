@@ -10,42 +10,44 @@ Game::Game()
 	Sprite sprite1(t1);
 	Sprite sprite2(t2);
 
+	// White Keys
 	sf::RectangleShape rectangle(sf::Vector2f(20.f, 40.f));
-rectangle.setSize(20.f, 40.f);
-rectangle.setFillColor(255, 255, 255);
+	// rectangle.setSize(Vector2f(20.f, 40.f));
+	rectangle.setFillColor(Color::White);
 
-sf::RectangleShape rectangle2(sf::Vector2f(20.f, 30.f));
-rectangle2.setFillColor(0, 0, 0);
-rectangle2.setOutlineThickness(3.f);
-rectangle2.setOutlineColor(sf::Color(255,255,255))
-rectangle2.setSize(15.f, 30.f);
+	// Black Keys
+	sf::RectangleShape rectangle2(sf::Vector2f(20.f, 30.f));
+	rectangle2.setFillColor(Color::Black);
+	rectangle2.setOutlineThickness(3.f);
+	rectangle2.setOutlineColor(Color::White);
+	//rectangle2.setSize(sf::Vector2f(15.f, 30.f));
 
 
-window.draw(rectangle);
-window.draw(rectangle);
-window.draw(rectangle);
+	m_window.draw(rectangle);
+	m_window.draw(rectangle);
+	m_window.draw(rectangle);
 //
-window.draw(rectangle2);
-window.draw(rectangle2);
+	m_window.draw(rectangle2);
+	m_window.draw(rectangle2);
 //
-window.draw(rectangle);
-window.draw(rectangle);
-window.draw(rectangle);
+	m_window.draw(rectangle);
+	m_window.draw(rectangle);
+	m_window.draw(rectangle);
 //
-window.draw(rectangle2);
-window.draw(rectangle2);
-window.draw(rectangle2);
+	m_window.draw(rectangle2);
+	m_window.draw(rectangle2);
+	m_window.draw(rectangle2);
 //
-window.draw(rectangle);
-window.draw(rectangle);
-window.draw(rectangle);
+	m_window.draw(rectangle);
+	m_window.draw(rectangle);
+	m_window.draw(rectangle);
 //
-window.draw(rectangle2);
-window.draw(rectangle2);
+	m_window.draw(rectangle2);
+	m_window.draw(rectangle2);
 //
-window.draw(rectangle);
-window.draw(rectangle);
-window.draw(rectangle);
+	m_window.draw(rectangle);
+	m_window.draw(rectangle);
+	m_window.draw(rectangle);
 
 //(255,255,255) - This is the white rbg code
 //Black rbg code is (0, 0, 0)
