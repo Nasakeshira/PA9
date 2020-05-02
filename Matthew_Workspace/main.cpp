@@ -26,6 +26,60 @@ using namespace sf;
 int main()
 {
     Game game;
+	sf::IpAddress ip = sf::IpAddress::getLocalAddress();
+	sf::TcpSocket socket;
+	char connectionType, mode;
+	char buffer[2000];
+	size_t = recieved;
+	string text = "Connected to: ";
+
+	cout <<"Enter (S) for server and (C) for client: " << endl;
+	cin >> connectionType;
+
+//This is testing that the client and the server is connected to each other 
+	if(conectionType== 'S')
+	{
+		sf::TcpListener listener;
+		listener.listener(2000);
+		listener.accept(socket);
+		text ++ "Server";
+		mode = 's';
+	}
+	else if(connectionListener=='C')
+	{
+		socket.connect(ip, 2000);
+		text += "Client";
+		mode = 'r';
+	}
+
+		socket.send(text.c_str(), text.length() + 1);
+
+		socket.recieve(buffer, sizeof(buffer), recieved);
+		cout << buffer << endl;
+
+//All of this is for sending and recieving through the network
+
+		bool done = false;
+
+		while(!done)
+		{
+			if(mode == 's')
+			{
+				getline(cin, text);
+				socket.send(text.c_str(, text.length() +1));
+				mode = 'r';
+			}
+			else if(mode == 'r')
+			{
+				socket.recieve(buffer, sizeof(buffer), recieved);
+				if(recieved > 0)
+				{
+				cout << "Recieved: " << buffer << endl;
+				mode = 's';
+				}
+			}
+			system("pause");
+		}
 
     game.run();
 
