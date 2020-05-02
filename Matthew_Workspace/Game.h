@@ -13,49 +13,51 @@
 // Creating game loop
 // Handle player input, updating gamestate (I.E. button has been pressed play sound), render (load piano)
 class Game
-    :public Piano
+	:public Piano
 {
 public:
-    Game();
+	Game();
 
-    void run();
+	void run();
 
-    void loadSound();
+	void loadSound();
 
-    void handleInput(sf::Sound Whitesound[], sf::Sound Blacksound[]);
+	void handleInput(sf::Sound Whitesound[], sf::Sound Blacksound[], sf::Sound WhitesoundOctave);
 
-    //template<typename T, typename... Args>
-    //void pushState(Args&&... args);
+	//template<typename T, typename... Args>
+	//void pushState(Args&&... args);
 
-    void popState();
+	void popState();
 
 private:
-    sf::RenderWindow m_window;
+	sf::RenderWindow m_window;
 
-    sf::Texture t1;
-    sf::Texture t2;
+	sf::Texture t1;
+	sf::Texture t2;
 
-    sf::Sprite sprite1;
-    sf::Sprite sprite2;
+	sf::Sprite sprite1;
+	sf::Sprite sprite2;
 
-    Piano piano;
-    
-    sf::Sound Whitesound[7];
+	Piano piano;
 
-    sf::Sound Blacksound[5];
+	sf::Sound Whitesound[7];
 
-    // Private members
-    int size = 16;
-    int whiteKeys = 12;
-    int blackKeys = 7;
-    int W = size * whiteKeys;
-    int B = size * blackKeys;
-    
-    // void tryPop();
+	sf::Sound WhitesoundOctave;
 
-    void handleEvents();
+	sf::Sound Blacksound[5];
 
-    bool m_shouldPop = false;
+	// Private members
+	int size = 16;
+	int whiteKeys = 12;
+	int blackKeys = 7;
+	int W = size * whiteKeys;
+	int B = size * blackKeys;
+
+	// void tryPop();
+
+	void handleEvents();
+
+	bool m_shouldPop = false;
 
 };
 
