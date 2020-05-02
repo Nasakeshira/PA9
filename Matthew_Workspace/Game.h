@@ -35,6 +35,8 @@ private:
     sf::Sprite sprite2;
 
     Piano piano;
+    
+    sf::Sound sound[7];
 
     // Private members
     int size = 16;

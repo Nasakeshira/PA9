@@ -10,13 +10,9 @@ Game::Game()
 	Sprite sprite1(t1);
 	Sprite sprite2(t2);
 
-
+	
 	//(255,255,255) - This is the white rbg code
 	//Black rbg code is (0, 0, 0)
-
-	Piano piano;
-
-	piano.loadSound();
 }
 
 // Infinite loop that exits only when window is closed.
@@ -26,7 +22,7 @@ void Game::run()
 
 	// Load textures
 
-		// White Keys
+	// White Keys
 	sf::RectangleShape rectangle(sf::Vector2f(120.f, 360.f));
 	// Redundant for now, reinstate if key sizes are wrong
 	// rectangle.setSize(Vector2f(20.f, 40.f));
@@ -39,11 +35,94 @@ void Game::run()
 	rectangle2.setOutlineColor(Color::White);
 	//rectangle2.setSize(sf::Vector2f(15.f, 30.f));
 
+	SoundBuffer Whitebuffer[7];
+	//A
+	Whitebuffer[0].loadFromFile("1g - white 1.wav");
+	//B
+	Whitebuffer[1].loadFromFile("3b - white 2.wav");
+	//C
+	Whitebuffer[2].loadFromFile("5c - white 3.wav");
+	//D
+	Whitebuffer[3].loadFromFile("6c# - white 4.wav");
+	//E
+	Whitebuffer[4].loadFromFile("8eb - white 5.wav");
+	//F
+	Whitebuffer[5].loadFromFile("10f - white 6.wav");
+	//G
+	Whitebuffer[6].loadFromFile("12 - white 7.wav");
+
+	for (int index = 0; index < 7; index++)
+		Whitesound[index].setBuffer(Whitebuffer[index]);
+
+
 	while (m_window.isOpen())
 	{
+
 		handleEvents();
 
-		handleInput();
+		// handleInput();
+
+		if (Keyboard::isKeyPressed(Keyboard::A))
+		{
+			// C
+			.play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::W)) //black
+		{
+			// D
+			//sound[3].play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::S))
+		{
+			// E
+			.play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::R)) //black
+		{
+			// F
+			//sound[5].play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::D))
+		{
+			// G
+			.play();
+		}
+		// Different octave
+		if (Keyboard::isKeyPressed(Keyboard::F))
+		{
+			// A
+			.play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::Y)) //black
+		{
+			// B
+			//sound[1].play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::J))
+		{
+			// C
+			.play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::I)) //black
+		{
+			// D
+			.play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::K))
+		{
+			// E
+			.play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::O)) //black
+		{
+			// F
+			//sound[5].play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::L))
+		{
+			// G
+			.play();
+		}
 
 		m_window.clear();
 
@@ -127,116 +206,116 @@ void Game::run()
 //}
 
 // Get sound to play!
-void Game::handleInput()
-{
-	//Sound A, B, C, D, E, F, G;
-	// Too be added later in update CsDb, DsEb, FsGb, GsAb, AsBb;
-
-	sf::SoundBuffer buff;
-	Piano::loadSound();
-
-	//buff.loadFromFile("1g - white 1");
-
-	//sf::Sound C;
-
-	//C.setBuffer();
-
-	// White Keys
-	if (Keyboard::isKeyPressed(Keyboard::A))
-	{
-		// C
-		sound[0].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::W)) //black
-	{
-		// D
-		//sound[3].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::S))
-	{
-		// E
-		sound[1].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::R)) //black
-	{
-		// F
-		//sound[5].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::D))
-	{
-		// G
-		sound[2].play();
-	}
-	// Different octave
-	if (Keyboard::isKeyPressed(Keyboard::F))
-	{
-		// A
-		sound[3].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::Y)) //black
-	{
-		// B
-		//sound[1].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::J))
-	{
-		// C
-		sound[4].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::I)) //black
-	{
-		// D
-		//sound[3].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::K))
-	{
-		// E
-		sound[5].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::O)) //black
-	{
-		// F
-		//sound[5].play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::L))
-	{
-		// G
-		sound[6].play();
-	}
-
-	// Black Keys
-	/*
-	if (Keyboard::isKeyPressed(Keyboard::W))
-	{
-		CsDb.play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::E))
-	{
-		DsEb.play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::T))
-	{
-		FsGb.play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::Y))
-	{
-		GsAb.play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::U))
-	{
-		AsBb.play();
-	}
-	// Different octave
-	if (Keyboard::isKeyPressed(Keyboard::O))
-	{
-		CsDb.play();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::P))
-	{
-		DsEb.play();
-	}
-	*/
-}
+//void Game::handleInput()
+//{
+//	//Sound A, B, C, D, E, F, G;
+//	// Too be added later in update CsDb, DsEb, FsGb, GsAb, AsBb;
+//
+//	sf::SoundBuffer buff;
+//	Piano::loadSound();
+//
+//	//buff.loadFromFile("1g - white 1");
+//
+//	//sf::Sound C;
+//
+//	//C.setBuffer();
+//
+//	// White Keys
+//	if (Keyboard::isKeyPressed(Keyboard::A))
+//	{
+//		// C
+//		sound[0].play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::W)) //black
+//	{
+//		// D
+//		//sound[3].play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::S))
+//	{
+//		// E
+//		sound[1].play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::R)) //black
+//	{
+//		// F
+//		//sound[5].play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::D))
+//	{
+//		// G
+//		sound[2].play();
+//	}
+//	// Different octave
+//	if (Keyboard::isKeyPressed(Keyboard::F))
+//	{
+//		// A
+//		sound[3].play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::Y)) //black
+//	{
+//		// B
+//		//sound[1].play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::J))
+//	{
+//		// C
+//		sound[4].play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::I)) //black
+//	{
+//		// D
+//		//sound[3].play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::K))
+//	{
+//		// E
+//		sound[5].play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::O)) //black
+//	{
+//		// F
+//		//sound[5].play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::L))
+//	{
+//		// G
+//		sound[6].play();
+//	}
+//
+//	// Black Keys
+//	/*
+//	if (Keyboard::isKeyPressed(Keyboard::W))
+//	{
+//		CsDb.play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::E))
+//	{
+//		DsEb.play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::T))
+//	{
+//		FsGb.play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::Y))
+//	{
+//		GsAb.play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::U))
+//	{
+//		AsBb.play();
+//	}
+//	// Different octave
+//	if (Keyboard::isKeyPressed(Keyboard::O))
+//	{
+//		CsDb.play();
+//	}
+//	if (Keyboard::isKeyPressed(Keyboard::P))
+//	{
+//		DsEb.play();
+//	}
+//	*/
+//}
 
 void Game::handleEvents()
 {

@@ -15,7 +15,19 @@ public:
 
 	~Piano();
 
-	sf::Sound sound[7];
+	sf::Sound A;
+
+	sf::Sound B;
+
+	sf::Sound C;
+
+	sf::Sound D;
+
+	sf::Sound E;
+
+	sf::Sound F;
+
+	sf::Sound G;
 
 	void loadSound();
 
