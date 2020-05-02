@@ -15,21 +15,7 @@ public:
 
 	~Piano();
 
-	sf::Sound A;
-
-	sf::Sound B;
-
-	sf::Sound C;
-
-	sf::Sound D;
-
-	sf::Sound E;
-
-	sf::Sound F;
-
-	sf::Sound G;
-
-	void loadSound();
+	virtual void loadSound();
 
 // Maybe include a thing where people can play a piano together? Using <SFML/Network.hpp>
 

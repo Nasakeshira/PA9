@@ -18,8 +18,6 @@ Game::Game()
 // Infinite loop that exits only when window is closed.
 void Game::run()
 {
-	// srand(time(0));
-
 	// Load textures
 
 	// White Keys
@@ -35,6 +33,8 @@ void Game::run()
 	rectangle2.setOutlineColor(Color::White);
 	//rectangle2.setSize(sf::Vector2f(15.f, 30.f));
 
+
+	// Loaded Sounds
 	SoundBuffer Whitebuffer[7];
 	//A
 	Whitebuffer[0].loadFromFile("1g - white 1.wav");
@@ -54,74 +54,92 @@ void Game::run()
 	for (int index = 0; index < 7; index++)
 		Whitesound[index].setBuffer(Whitebuffer[index]);
 
+	SoundBuffer Blackbuffer[5];
+	
+	Blackbuffer[0].loadFromFile("2g#.wav");
+	Blackbuffer[1].loadFromFile("4b.wav");
+	Blackbuffer[2].loadFromFile("7d.wav");
+	Blackbuffer[3].loadFromFile("9e.wav");
+	Blackbuffer[4].loadFromFile("11f#.wav");
+
+	for (int index = 0; index < 5; index++)
+		Blacksound[index].setBuffer(Blackbuffer[index]);
 
 	while (m_window.isOpen())
 	{
 
 		handleEvents();
 
-		// handleInput();
-
+		//handleInput(&(Whitesound[7]),&(Blacksound[7]));
+		// This organization just makes sense to me, lmk if I setup the keys properly
+		// White Keys
 		if (Keyboard::isKeyPressed(Keyboard::A))
 		{
 			// C
-			.play();
-		}
-		if (Keyboard::isKeyPressed(Keyboard::W)) //black
-		{
-			// D
-			//sound[3].play();
+			Whitesound[0].play();
 		}
 		if (Keyboard::isKeyPressed(Keyboard::S))
 		{
-			// E
-			.play();
-		}
-		if (Keyboard::isKeyPressed(Keyboard::R)) //black
-		{
-			// F
-			//sound[5].play();
+			// D
+			Whitesound[3].play();
 		}
 		if (Keyboard::isKeyPressed(Keyboard::D))
 		{
-			// G
-			.play();
+			// E
+			Whitesound[1].play();
 		}
-		// Different octave
 		if (Keyboard::isKeyPressed(Keyboard::F))
 		{
-			// A
-			.play();
+			// F
+			Whitesound[5].play();
 		}
-		if (Keyboard::isKeyPressed(Keyboard::Y)) //black
+		if (Keyboard::isKeyPressed(Keyboard::G))
 		{
-			// B
-			//sound[1].play();
+			// G
+			Whitesound[2].play();
+		}
+		// Different octave
+		if (Keyboard::isKeyPressed(Keyboard::H))
+		{
+			// A
+			Whitesound[3].play();
 		}
 		if (Keyboard::isKeyPressed(Keyboard::J))
 		{
-			// C
-			.play();
-		}
-		if (Keyboard::isKeyPressed(Keyboard::I)) //black
-		{
-			// D
-			.play();
+			// B
+			Whitesound[1].play();
 		}
 		if (Keyboard::isKeyPressed(Keyboard::K))
 		{
-			// E
-			.play();
+			// C
+			Whitesound[4].play();
 		}
-		if (Keyboard::isKeyPressed(Keyboard::O)) //black
+
+		// Black Keys
+
+		if (Keyboard::isKeyPressed(Keyboard::W))
 		{
-			// F
-			//sound[5].play();
+			Blacksound[0].play();
 		}
-		if (Keyboard::isKeyPressed(Keyboard::L))
+		if (Keyboard::isKeyPressed(Keyboard::E))
 		{
-			// G
-			.play();
+			Blacksound[1].play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::T))
+		{
+			Blacksound[2].play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::Y))
+		{
+			Blacksound[3].play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::U))
+		{
+			Blacksound[4].play();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::O))
+		{
+			Blacksound[0].play();
 		}
 
 		m_window.clear();
@@ -206,116 +224,111 @@ void Game::run()
 //}
 
 // Get sound to play!
-//void Game::handleInput()
-//{
-//	//Sound A, B, C, D, E, F, G;
-//	// Too be added later in update CsDb, DsEb, FsGb, GsAb, AsBb;
-//
-//	sf::SoundBuffer buff;
-//	Piano::loadSound();
-//
-//	//buff.loadFromFile("1g - white 1");
-//
-//	//sf::Sound C;
-//
-//	//C.setBuffer();
-//
-//	// White Keys
-//	if (Keyboard::isKeyPressed(Keyboard::A))
-//	{
-//		// C
-//		sound[0].play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::W)) //black
-//	{
-//		// D
-//		//sound[3].play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::S))
-//	{
-//		// E
-//		sound[1].play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::R)) //black
-//	{
-//		// F
-//		//sound[5].play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::D))
-//	{
-//		// G
-//		sound[2].play();
-//	}
-//	// Different octave
-//	if (Keyboard::isKeyPressed(Keyboard::F))
-//	{
-//		// A
-//		sound[3].play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::Y)) //black
-//	{
-//		// B
-//		//sound[1].play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::J))
-//	{
-//		// C
-//		sound[4].play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::I)) //black
-//	{
-//		// D
-//		//sound[3].play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::K))
-//	{
-//		// E
-//		sound[5].play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::O)) //black
-//	{
-//		// F
-//		//sound[5].play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::L))
-//	{
-//		// G
-//		sound[6].play();
-//	}
-//
-//	// Black Keys
-//	/*
-//	if (Keyboard::isKeyPressed(Keyboard::W))
-//	{
-//		CsDb.play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::E))
-//	{
-//		DsEb.play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::T))
-//	{
-//		FsGb.play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::Y))
-//	{
-//		GsAb.play();
-//	}
-//	if (Keyboard::isKeyPressed(Keyboard::U))
-//	{
-//		AsBb.play();
-//	}
-//	// Different octave
-//	if (Keyboard::isKeyPressed(Keyboard::O))
-//	{
-//		CsDb.play();
-//	}
+void Game::handleInput(sf::Sound Whitesound[], sf::Sound Blacksound[])
+{
+	Piano::loadSound();
+
+	// White Keys
+	if (Keyboard::isKeyPressed(Keyboard::A))
+	{
+		// C
+		Whitesound[0].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::S)) 
+	{
+		// D
+		Whitesound[3].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::D))
+	{
+		// E
+		Whitesound[1].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::F)) 
+	{
+		// F
+		Whitesound[5].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::G))
+	{
+		// G
+		Whitesound[2].play();
+	}
+	// Different octave
+	if (Keyboard::isKeyPressed(Keyboard::H))
+	{
+		// A
+		Whitesound[3].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::J))
+	{
+		// B
+		Whitesound[1].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::K))
+	{
+		// C
+		Whitesound[4].play();
+	}
+
+	// To be Added later
+
+	//if (Keyboard::isKeyPressed(Keyboard::L))
+	//{
+	//	// D
+	//	sound[3].play();
+	//}
+	//if (Keyboard::isKeyPressed(Keyboard::SemiColon))
+	//{
+	//	// E
+	//	sound[5].play();
+	//}
+	//if (Keyboard::isKeyPressed(Keyboard::Quote))
+	//{
+	//	// F
+	//	//sound[5].play();
+	//}
+	//if (Keyboard::isKeyPressed(Keyboard::Enter))
+	//{
+	//	// G
+	//	sound[6].play();
+	//}
+
+	// Black Keys
+	
+	if (Keyboard::isKeyPressed(Keyboard::W))
+	{
+		Blacksound[0].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::E))
+	{
+		Blacksound[1].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::T))
+	{
+		Blacksound[2].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Y))
+	{
+		Blacksound[3].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::U))
+	{
+		Blacksound[4].play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::O))
+	{
+		Blacksound[5].play();
+	}
+	
+	// To Be Added Later
+
 //	if (Keyboard::isKeyPressed(Keyboard::P))
 //	{
 //		DsEb.play();
 //	}
-//	*/
-//}
+//	
+}
 
 void Game::handleEvents()
 {
@@ -337,4 +350,29 @@ void Game::handleEvents()
 void Game::popState()
 {
 	m_shouldPop = true;
+}
+
+
+void Game::loadSound()
+{
+	SoundBuffer buffer[7];
+
+	// buffer.loadFromSamples(&samples[0], samples.size(), 2, 44100);
+
+	// loadFromfile need to sample all the correct audio files
+
+	//A
+	buffer[0].loadFromFile("1g - white 1.wav");
+	//B
+	buffer[1].loadFromFile("3b - white 2.wav");
+	//C
+	buffer[2].loadFromFile("5c - white 3.wav");
+	//D
+	buffer[3].loadFromFile("6c# - white 4.wav");
+	//E
+	buffer[4].loadFromFile("8eb - white 5.wav");
+	//F
+	buffer[5].loadFromFile("10f - white 6.wav");
+	//G
+	buffer[6].loadFromFile("12 - white 7.wav");
 }

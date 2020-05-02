@@ -29,54 +29,6 @@ int main()
 
     game.run();
 
-    
-    // RenderWindow window(VideoMode(1280,720), "Test");
-    //SoundBuffer buffer;
-    //Sound sound;
-    //
-    //buffer.loadFromFile("sound.wav");
-    //sound.setBuffer(buffer);
-    //
-    //for (int index = 0; index < 1000000000; index++)
-    //{
-    //
-    //    if (Keyboard::isKeyPressed(Keyboard::Left))sound.play();
-    //}
-    /*
-    while(window.isOpen())
-    {
-        //Event play;
-
-        //Running the game
-        game.run();
-
-        //Only have this becuase it is not in run(). If its put into run() then take this part out
-        //game.handleInput();
-
-
-    //	while(window.pollEvent(play))
-    //	{
-    //		if(play.type == Event::Closed)
-    //			window.close();
-    //	}
-    //	if(Keyboard::isKeyPressed(Keyboard::Play))
-    //	{
-    //		handleInput();
-    //	}
-    //	else
-    //		window.close();
-
-        window.clear();
-
-        //Setting the postion on where you are starting on the keyboard(It doesn't matter becuase you can hit any key to play the piano)
-
-
-
-        window.display();
-
-    }
-    */
-
 	return 0;
 }
 // The end of our PA9 main 

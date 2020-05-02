@@ -20,6 +20,10 @@ public:
 
     void run();
 
+    void loadSound();
+
+    void handleInput(sf::Sound Whitesound[], sf::Sound Blacksound[]);
+
     //template<typename T, typename... Args>
     //void pushState(Args&&... args);
 
@@ -36,7 +40,9 @@ private:
 
     Piano piano;
     
-    sf::Sound sound[7];
+    sf::Sound Whitesound[7];
+
+    sf::Sound Blacksound[5];
 
     // Private members
     int size = 16;
@@ -48,8 +54,6 @@ private:
     // void tryPop();
 
     void handleEvents();
-
-    void handleInput();
 
     bool m_shouldPop = false;
 
